@@ -1,0 +1,107 @@
+.panel-default{
+    background-color:#006cb5;
+    color: white;
+}
+.panel-default>.panel-heading2{
+    text-align: center;
+    background-color:white;
+    color: green;
+    font-size: 26px;
+}
+.navbar-toggle {
+    background-color: #006cb5;
+    
+}
+.navbar-default .navbar-toggle {
+    border-color: white;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #75bae7;
+}
+.navbar.navbar-default.navbar-static-top{
+    background-color: #006cb5;
+}
+.navbar-header{
+    background-color: #006cb5;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+ color: white;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a{
+    transition: 1s;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+ background-color: white;
+ color: #006cb5;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: white;
+}
+.dropdown-menu {
+    border-color: white;
+    background-color: #006cb5;
+}
+.open>.dropdown-menu {
+    display: block;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a{
+    color: white;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    text-decoration: none;
+    color: #262626;
+    background-color: #006cb5;
+}
+body{
+    background-color:#75bae7;
+}
+a.link{
+    text-decoration: none;
+    color: green;
+}
+a.link:hover{
+    text-decoration: none;
+    color: yellow;
+}
+.btn-primary {
+    color: #fff;
+    background-color: rgb(64, 201, 64);
+    border-color: white;
+    transition: 500ms;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: rgb(51, 157, 51);
+    border-color: white;
+}
+.btn-link {
+    color: white;
+
+}
+.btn-link:hover {
+    text-decoration: none;
+    color: black;
+
+}
+.esportes {
+    width: 100%;
+    height: auto;
+  }
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .form-control-feedback, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+    color: white;
+    text-shadow: 2px 0 red, -2px 0 red, 0 2px red, 0 -2px red,
+               1px 1px red, -1px -1px red, 1px -1px red, -1px 1px red;
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
