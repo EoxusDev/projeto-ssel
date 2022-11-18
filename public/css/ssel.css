@@ -1,4 +1,8 @@
 .panel-default{
+    background-color:white;
+    color: black;
+}
+.panel-default>.panel-heading{
     background-color:#006cb5;
     color: white;
 }
@@ -93,9 +97,7 @@ a.link:hover{
     height: auto;
   }
 .has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .form-control-feedback, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
-    color: white;
-    text-shadow: 2px 0 red, -2px 0 red, 0 2px red, 0 -2px red,
-               1px 1px red, -1px -1px red, 1px -1px red, -1px 1px red;
+    color: red;
 }
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }

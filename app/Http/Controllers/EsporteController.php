@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Esportes;
+use App\Esporte;
 use Illuminate\Http\Request;
 
-class EsportesController extends Controller
+class EsporteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,9 @@ class EsportesController extends Controller
      */
     public function listar()
     {
-        $esportes = Esportes::all();
+        $esportes = Esporte::all();
 
-        dd($esportes);
+        //dd($esportes);
         return view('esportes/listaresportes', compact('esportes'));
     }
 
@@ -45,13 +45,13 @@ class EsportesController extends Controller
             'endereco' => 'required|string|min:10',
         ];
         $mensagens = [
-            'nome.min' => 'Nome precisa ter ao menos 10 caracteres',
+            'nome.min' => 'Nome precisa ter no minimo 10 caracteres',
             'name.max' => 'Numero maximo de caracteres ultrapassado',
-            'estrutura.min' => 'Descrição precisa ter ao menos 10 caracteres',
+            'estrutura.min' => 'Descrição precisa ter no minimo 10 caracteres',
             'estrutura.max' => 'Numero maximo de caracteres ultrapassado',
-            'atividades.min' => 'Descrição precisa ter ao menos 10 caracteres',
+            'atividades.min' => 'Descrição precisa ter no minimo 10 caracteres',
             'atividades.max' => 'Numero maximo de caracteres ultrapassado',
-            'endereco.min' => 'Endereço precisa ter ao menos 10 caracteres'
+            'endereco.min' => 'Endereço precisa ter no minimo 10 caracteres'
         ];
         $validator = validator($request->all(), $regras, $mensagens);
 
@@ -62,7 +62,7 @@ class EsportesController extends Controller
 
         $esporte = $request->all();
 
-        Esportes::create($esporte);
+        Esporte::create($esporte);
         
         return back()->with(['success' => 'Esporte cadastrado com sucesso']);
         }

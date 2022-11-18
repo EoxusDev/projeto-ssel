@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
-                            <label for="nome" class="col-md-4 control-label">Nome do Esporte</label>
+                            <label for="nome" class="col-md-4 control-label">Núcleo do Esporte</label>
 
                             <div class="col-md-6">
                                 <input id="nome" type="text" class="form-control" name="nome"required autofocus>
@@ -69,7 +69,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Cadastrar-se
+                                    Cadastrar
                                 </button>
                             </div>
                         </div>

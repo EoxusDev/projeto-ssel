@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ssel.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1d5143777d.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -30,7 +31,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         <img src="https://cdnsemit.salvador.ba.gov.br/geral/imagens/logo_pms_tarja.png" style="height:29px;">
                         
                     </a>
@@ -49,7 +50,8 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
                         @else
-                            <li><a href="{{ route('cadastraresporte') }}">Cadastrar Esporte</a></li>
+                             <li><a href="{{ route('listaresportes') }}">Lista de Atividades</a></li>
+                            <li><a href="{{ route('cadastraresporte') }}">Cadastrar Atividade</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

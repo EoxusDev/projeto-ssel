@@ -16,8 +16,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/esportes', 'EsportesController@listar')->name('listaresportes');
-Route::get('/cadastrar_esportes', 'EsportesController@cadastrar')->name('cadastraresporte');
-Route::post('/cadastrar_esportes', 'EsportesController@novoCadastro')->name('novoesporte');
+//Rotas Esportes//
+Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
+Route::get('/esportes', 'EsporteController@listar')->middleware('auth')->name('listaresportes');
+Route::get('/cadastrar_esportes', 'EsporteController@cadastrar')->middleware('auth')->name('cadastraresporte');
+Route::post('/cadastrar_esportes', 'EsporteController@novoCadastro')->middleware('auth')->name('novoesporte');
+//Rotas Usuarios//
+Route::get('/usuario/{id}', 'UserController@buscar');

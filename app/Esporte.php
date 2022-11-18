@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Esportes extends Model
+class Esporte extends Model
 {
     protected $table = 'esportes';
     protected $fillable = [
-        'nome', 'estrutura', 'atividades', 'endereco'
+        'nome',
+        'estrutura', 
+        'atividades',
+        'endereco'
     ];
 }
