@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -22,9 +23,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function usuarioAtual()
     {
-        //
+        $usuarioid = Auth::id();
+        
+        return view('esportes/listaresportes', compact('usuarioid'));
+
     }
 
     /**

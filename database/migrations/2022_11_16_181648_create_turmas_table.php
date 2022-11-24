@@ -15,7 +15,7 @@ class CreateTurmasTable extends Migration
     {
         Schema::create('turmas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user');
+            $table->string('users');
             $table->string('esportes');
             $table->timestamps();
         });

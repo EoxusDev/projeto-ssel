@@ -24,7 +24,14 @@
                     <td>{{$esporte->atividades}}</td>
                     <td style="text-align: center;"><a target="_blank" href="{{ url($esporte->endereco) }}"><i class="fa-solid fa-location-dot fa-2xl"></i></a></td>
                     <td>Não Matriculado</td>
-                    <td><a href=""class="btn btn-success mx-1">Matricular</a></td>
+                    <td>
+                    <form action="{{ route('matricular')}} " method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" id="esporteid" name="esporteid" value="{{$esporte->id}}">
+                        <input type="hidden" id="usuarioid" name="usuarioid" value="{{$usuarioid}}">
+                        <input type="submit" class="btn btn-success mx-1" value="Matricular">
+                    </form>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>
