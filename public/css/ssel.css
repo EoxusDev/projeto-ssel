@@ -99,6 +99,12 @@ a.link:hover{
 .has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .form-control-feedback, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
     color: red;
 }
+span.success{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color:rgb(7, 172, 7);
+}
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
       to { opacity: 1; }

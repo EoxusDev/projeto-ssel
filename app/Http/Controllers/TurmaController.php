@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Esporte;
 use App\Turma;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
 class TurmaController extends Controller
@@ -36,10 +37,29 @@ class TurmaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function matricular(Request $request)
-    {
-        $turma = $request->all();
-        dd($turma);
-        Turma::save($turma);
+    {   
+        $esporte = $request->all();
+
+        $regras = [
+            'users' => Rule::unique('turmas')->where(function ($regra) use($esporte){
+                $regra->where('esportes', $esporte['esportes']);
+            })
+        ];
+        $mensagens = [
+            'users.unique' => 'Usuario ja matriculado no esporte'
+        ];
+        
+        $validator = validator($request->all(), $regras, $mensagens);
+
+        if ($validator->fails()) {
+            return back()->withInput()->withErrors($validator);
+        }
+        else{
+            $turma = $request->all();
+            Turma::create($turma);
+
+            return back()->with(['success' => 'Usuario Matriculado com sucesso']);
+        }
         
     }
 

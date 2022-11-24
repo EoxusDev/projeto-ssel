@@ -27,14 +27,26 @@
                     <td>
                     <form action="{{ route('matricular')}} " method="post">
                         {{ csrf_field() }}
-                        <input type="hidden" id="esporteid" name="esporteid" value="{{$esporte->id}}">
-                        <input type="hidden" id="usuarioid" name="usuarioid" value="{{$usuarioid}}">
+                        <input type="hidden" id="esportes" name="esportes" value="{{$esporte->id}}">
+                        <input type="hidden" id="users" name="users" value="{{$usuarioid}}">
                         <input type="submit" class="btn btn-success mx-1" value="Matricular">
                     </form>
                     </td>
-                    </tr>
+                    </tr> 
                     @endforeach
                 </tbody>
+                <div class="form-group{{ $errors->has('users') ? ' has-error' : '' }}">
+                    @if ($errors->has('users'))
+                        <span class="help-block">
+                              <strong>{{ $errors->first('users') }}</strong>
+                        </span>
+                    @endif
+                    @if (Session::has('success'))
+                        <span class="success">
+                             <strong>{{ session('success') }}</strong>
+                        </span>
+                    @endif
+                </div>
                 </table>
                 </div>
             </div>
