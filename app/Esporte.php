@@ -13,4 +13,8 @@ class Esporte extends Model
         'atividades',
         'endereco'
     ];
+
+    public function matricula() {
+        return $this->belongsToMany(User::class, 'turmas', 'esportes', 'id');
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Esporte;
 use App\Turma;
 use Illuminate\Http\Request;
 
@@ -33,9 +35,12 @@ class TurmaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function matricular(Request $request)
     {
-        //
+        $turma = $request->all();
+        dd($turma);
+        Turma::save($turma);
+        
     }
 
     /**

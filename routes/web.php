@@ -22,4 +22,7 @@ Route::get('/esportes', 'EsporteController@listar')->middleware('auth')->name('l
 Route::get('/cadastrar_esportes', 'EsporteController@cadastrar')->middleware('auth')->name('cadastraresporte');
 Route::post('/cadastrar_esportes', 'EsporteController@novoCadastro')->middleware('auth')->name('novoesporte');
 //Rotas Usuarios//
+//Route::get('/esportes', 'UserController@usuarioAtual');
 Route::get('/usuario/{id}', 'UserController@buscar');
+//Rota Matricula//
+Route::post('/matricular', 'TurmaController@matricular')->name('matricular');

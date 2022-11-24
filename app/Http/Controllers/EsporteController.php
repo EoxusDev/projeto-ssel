@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Esporte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EsporteController extends Controller
 {
@@ -14,9 +16,10 @@ class EsporteController extends Controller
     public function listar()
     {
         $esportes = Esporte::all();
+        $usuarioid = Auth::id();
 
         //dd($esportes);
-        return view('esportes/listaresportes', compact('esportes'));
+        return view('esportes/listaresportes', compact('esportes', 'usuarioid'));
     }
 
     /**
@@ -64,7 +67,7 @@ class EsporteController extends Controller
 
         Esporte::create($esporte);
         
-        return back()->with(['success' => 'Esporte cadastrado com sucesso']);
+        return redirect()->route('listaresportes')->with(['success' => 'Esporte cadastrado com sucesso']);
         }
     }
 

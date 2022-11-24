@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function matricula() {
+        return $this->belongsToMany(Esporte::class, 'turmas', 'users', 'id');
+    }
 }
