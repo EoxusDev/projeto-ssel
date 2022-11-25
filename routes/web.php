@@ -21,6 +21,9 @@ Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
 Route::get('/esportes', 'EsporteController@listar')->middleware('auth')->name('listaresportes');
 Route::get('/cadastrar_esportes', 'EsporteController@cadastrar')->middleware('auth')->name('cadastraresporte');
 Route::post('/cadastrar_esportes', 'EsporteController@novoCadastro')->middleware('auth')->name('novoesporte');
+Route::get('/editar_esportes/{id}', 'EsporteController@editar')->middleware('auth')->name('editar');
+Route::put('/editar_esportes/{id}', 'EsporteController@atualizar')->middleware('auth')->name('atualizar');
+Route::delete('/deletar_esportes/{id}', 'EsporteController@apagar')->middleware('auth');
 //Rotas Usuarios//
 //Route::get('/esportes', 'UserController@usuarioAtual');
 Route::get('/usuario/{id}', 'UserController@buscar');

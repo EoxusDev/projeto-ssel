@@ -24,9 +24,9 @@
                     <td>{{$esporte->atividades}}</td>
                     <td style="text-align: center;"><a target="_blank" href="{{ url($esporte->endereco) }}"><i class="fa-solid fa-location-dot fa-2xl"></i></a></td>
                     <td>
-                        @if($turma->esportes == $esporte->id)
-                        Matriculado
-                        @endif
+                        @foreach($turmas as $turma)
+                        {{$turma->esportes == $esporte->id ? 'Matriculado' : ''}}
+                        @endforeach
                     </td>
                     @if(Auth::user()->acess == 1)
                     <td>
@@ -37,6 +37,15 @@
                         <input type="submit" class="btn btn-success mx-1" value="Matricular">
                     </form>
                     </td>
+                    @elseif(Auth::user()->acess == 2)
+                    <td>
+                        <form action="{{ url('/deletar_esportes', $esporte->id)}} " method="post">
+                            {{ csrf_field() }}
+                            <a href="{{url('/editar_esportes', $esporte->id )}}"class="btn btn-success mx-1">Editar</a>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="submit" class="btn btn-danger mx-1" value="Apagar">
+                        </form>
+                        </td>
                     @endif
                     </tr> 
                     @endforeach

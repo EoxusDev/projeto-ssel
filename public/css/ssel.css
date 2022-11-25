@@ -105,6 +105,12 @@ span.success{
     margin-bottom: 10px;
     color:rgb(7, 172, 7);
 }
+.btn-danger {
+    margin-top: 5px;
+    color: #fff;
+    background-color: #a90f0f;
+    border-color: #a90f0f;
+}
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
       to { opacity: 1; }
