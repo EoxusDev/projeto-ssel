@@ -51,7 +51,9 @@
                             <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
                         @else
                              <li><a href="{{ route('listaresportes') }}">Lista de Atividades</a></li>
+                        @if (Auth::user()->acess == 2)
                             <li><a href="{{ route('cadastraresporte') }}">Cadastrar Atividade</a></li>
+                        @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

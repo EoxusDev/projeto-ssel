@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use App\Turma;
 use App\Esporte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +19,12 @@ class EsporteController extends Controller
     {
         $esportes = Esporte::all();
         $usuarioid = Auth::id();
+        $turma = DB::table('turmas')->where('users', '=', $usuarioid)->get();
+        
+        return view('esportes/listaresportes', compact('esportes', 'usuarioid', 'turma'));
+    
+        
 
-        //dd($esportes);
-        return view('esportes/listaresportes', compact('esportes', 'usuarioid'));
     }
 
     /**
@@ -29,7 +34,13 @@ class EsporteController extends Controller
      */
     public function cadastrar()
     {
+        if(Auth::user()->acess == 2){
+
         return view('esportes/cadesportes');
+        }
+        else{
+            return redirect('home');
+        }
     }
 
     /**

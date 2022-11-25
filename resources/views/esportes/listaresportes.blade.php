@@ -23,7 +23,12 @@
                     <td>{{$esporte->estrutura}}</td>
                     <td>{{$esporte->atividades}}</td>
                     <td style="text-align: center;"><a target="_blank" href="{{ url($esporte->endereco) }}"><i class="fa-solid fa-location-dot fa-2xl"></i></a></td>
-                    <td>Não Matriculado</td>
+                    <td>
+                        @if($turma->esportes == $esporte->id)
+                        Matriculado
+                        @endif
+                    </td>
+                    @if(Auth::user()->acess == 1)
                     <td>
                     <form action="{{ route('matricular')}} " method="post">
                         {{ csrf_field() }}
@@ -32,6 +37,7 @@
                         <input type="submit" class="btn btn-success mx-1" value="Matricular">
                     </form>
                     </td>
+                    @endif
                     </tr> 
                     @endforeach
                 </tbody>
